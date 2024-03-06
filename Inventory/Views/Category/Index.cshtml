@@ -1,0 +1,83 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Identity.EntityFramework
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<Inventory.Models.Categories>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+<h1>Product Category</h1>
+<p>
+    <a asp-action="Create" class="fa-fa fa-life-saver">Add New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryDescription)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.AddedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddedOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifiedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifiedOn)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var productCategories in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelEmployee => productCategories.CategoryId)
+                </td>
+                <td>
+                    @Html.DisplayFor(ModelEmployee => productCategories.CategoryName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelEmployee => productCategories.CategoryCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(ModelEmployee => productCategories.CategoryDescription)
+                </td>
+                
+                <td>
+                    @Html.DisplayFor(ModelEmployee => productCategories.AddedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelEmployee => productCategories.AddedOn)
+                </td>
+                <td>
+                    @Html.DisplayFor(ModelEmployee => productCategories.ModifiedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelEmployee => productCategories.ModifiedOn)
+                </td>
+                <td class="btn btn btn-outline-primary">
+                    @Html.ActionLink("Edit", "Edit", new { productcategoryId = productCategories.CategoryId })
+                </td>
+                <td class="btn btn btn-outline-primary">
+                    @Html.ActionLink("Delete", "Delete", new { productcategoryId = productCategories.CategoryId })
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

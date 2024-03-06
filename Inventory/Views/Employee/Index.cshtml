@@ -1,0 +1,91 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Identity.EntityFramework
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<Inventory.Models.Employee>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+<h1>Employees List</h1>
+<p>
+    <a asp-action="Create" class="btn btn btn-primary">Create</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrimaryPhone)
+            </th>
+         
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Attachments)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SupervisorId)
+            </th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelEmployee => employee.EmployeeId)
+                </td>
+                <td>
+                    @Html.DisplayFor(ModelEmployee => employee.FirstName)
+                </td>
+                 <td>
+                    @Html.DisplayFor(modelEmployee => employee.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(ModelEmployee => employee.EmailAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelEmployee => employee.JobTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(ModelEmployee => employee.PrimaryPhone)
+                </td>
+                
+                <td>
+                    @Html.DisplayFor(ModelEmployee => employee.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelEmployee => employee.Attachments)
+                </td>
+                <td>
+                    @Html.DisplayFor(ModelEmployee => employee.SupervisorId)
+                </td>
+                
+                <td class="btn btn btn-outline-primary">
+                    @Html.ActionLink("Edit", "Edit", new { employeeId = employee.EmployeeId })
+                </td>
+                <td class="btn btn btn-outline-primary">
+                    @Html.ActionLink("Delete", "Delete", new { employeeId = employee.EmployeeId })
+                </td>
+                
+            </tr>
+        }
+    </tbody>
+</table>

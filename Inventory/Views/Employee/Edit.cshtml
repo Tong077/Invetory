@@ -1,0 +1,95 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@model Inventory.Models.Employee
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "_Layout";
+
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Update" asp-controller="Employee" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-bg-danger"></div>
+            <input type="hidden" asp-for="EmployeeId" />
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label">First Name</label>
+                <input type="text" asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-bg-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label">Last Name</label>
+                <input type="text" asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmailAddress" class="control-label">EmailAddress</label>
+                <input type="text" asp-for="EmailAddress" class="form-control" />
+                <span asp-validation-for="EmailAddress" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobTitle" class="control-label">JobTitle</label>
+                <input type="text" asp-for="JobTitle" class="form-control" />
+                <span asp-validation-for="JobTitle" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrimaryPhone" class="control-label">PrimaryPhone</label>
+                <input type="text" asp-for="PrimaryPhone" class="form-control" />
+                <span asp-validation-for="PrimaryPhone" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SecondaryPhone" class="control-label">SecondaryPhone</label>
+                <input type="text" asp-for="SecondaryPhone" class="form-control" />
+                <span asp-validation-for="SecondaryPhone" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label">Title</label>
+                <input type="text" asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Attachments" class="control-label">Attachments</label>
+                <input type="text" asp-for="Attachments" class="form-control" />
+                <span asp-validation-for="Attachments" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SupervisorId" class="control-label">SupervisorId</label>
+                <input type="text" asp-for="SupervisorId" class="form-control" />
+                <span asp-validation-for="SupervisorId" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WindowsUserName" class="control-label">WindowsUserName</label>
+                <input type="text" asp-for="WindowsUserName" class="form-control" />
+                <span asp-validation-for="WindowsUserName" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AddeBy" class="control-label">AddeBy</label>
+                <input type="text" asp-for="AddeBy" class="form-control" />
+                <span asp-validation-for="AddeBy" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AddedOn" class="control-label">AddedOn Name</label>
+                <input type="text" asp-for="AddedOn" class="form-control" />
+                <span asp-validation-for="AddedOn" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ModifiedBy" class="control-label">ModifiedBy Name</label>
+                <input type="text" asp-for="ModifiedBy" class="form-control" />
+                <span asp-validation-for="ModifiedBy" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ModifiedOn" class="control-label">ModifiedOn Name</label>
+                <input type="text" asp-for="ModifiedOn" class="form-control" />
+                <span asp-validation-for="ModifiedOn" class="text-bg-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn btn-success">Save Change</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Index" class="btn btn btn-outline-primary">Back</a>
+</div>

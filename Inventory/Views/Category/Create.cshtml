@@ -1,0 +1,66 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@model Inventory.Models.Categories
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_Layout";
+}
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Store" asp-controller="Category" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-bg-danger"></div>
+
+            <div class="from-group">
+                <label asp-for="CategoryName" class="control-label">CategoryName</label>
+                <input type="text" asp-for="CategoryName" class="form-control" />
+                <span asp-validation-for="CategoryName" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryCode" class="control-label">CategoryCode</label>
+                <input type="text" asp-for="CategoryCode" class="form-control" />
+                <span asp-validation-for="CategoryCode" class="text-bg-danger"></span>
+            </div>
+
+
+            <div class="from-group">
+                <label asp-for="CategoryDescription" class="control-label">CategoryDescription</label>
+                <input type="text" asp-for="CategoryDescription" class="form-control" />
+                <span asp-validation-for="CategoryDescription" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryImage" class="control-label">ProductCategoryImage</label>
+                <input type="text" asp-for="CategoryImage" class="form-control" />
+                <span asp-validation-for="CategoryImage" class="text-bg-danger"></span>
+            </div>
+
+            <div class="from-group">
+                <label asp-for="AddedBy" class="control-label">AddedBy</label>
+                <input type="text" asp-for="AddedBy" class="form-control" />
+                <span asp-validation-for="AddedBy" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AddedOn" class="control-label">AddedOn</label>
+                <input type="text" asp-for="AddedOn" class="form-control" />
+                <span asp-validation-for="AddedOn" class="text-bg-danger"></span>
+            </div>
+
+
+            <div class="from-group">
+                <label asp-for="ModifiedBy" class="control-label">Modified</label>
+                <input type="text" asp-for="ModifiedBy" class="form-control" />
+                <span asp-validation-for="ModifiedBy" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ModifiedOn" class="control-label">ModifiedOn</label>
+                <input type="text" asp-for="ModifiedOn" class="form-control" />
+                <span asp-validation-for="ModifiedOn" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit">
+                    <i class="fa fa-save"></i>
+                    Create New
+                    </button>
+            </div>
+        </form>
+    </div>
+</div>

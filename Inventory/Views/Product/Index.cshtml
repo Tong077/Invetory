@@ -1,0 +1,105 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Identity.EntityFramework
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<Inventory.Models.Products>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+<h1>Employees List</h1>
+<p>
+    <a asp-action="Create" class="btn btn btn-primary">Create</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StandardUnitCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitPrice)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.QuantityPerUnit)
+            </th>
+         
+           
+            <th>
+                @Html.DisplayNameFor(model => model.Categories!.CategoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddedOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifiedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifiedOn)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var products in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(ModelProducts => products.ProductId)
+                </td>
+                <td>
+                    @Html.DisplayFor(ModelProducts => products.ProductCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(ModelProducts => products.ProductDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(ModelProducts => products.StandardUnitCost)
+                </td>
+                <td>
+                    @Html.DisplayFor(ModelProducts => products.UnitPrice)
+                </td>
+               
+               
+                <td>
+                    @Html.DisplayFor(ModelProducts => products.QuantityPerUnit)
+                </td>
+               
+                <td>
+                    @Html.DisplayFor(ModelProducts => products.Categories!.CategoryName)
+                </td>
+                <td>
+                    @Html.DisplayFor(ModelProducts => products.AddedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(ModelProducts => products.AddedOn)
+                </td>
+                <td>
+                    @Html.DisplayFor(ModelProducts => products.ModifiedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(ModelProducts => products.ModifiedOn)
+                </td>
+                <td class="btn btn btn-outline-primary">
+                    @Html.ActionLink("Edit", "Edit", new { productId = products.ProductId })
+                </td>
+                <td class="btn btn btn-outline-primary">
+                    @Html.ActionLink("Delete", "Delete", new { productId = products.ProductId })
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

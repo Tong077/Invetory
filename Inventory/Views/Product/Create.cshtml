@@ -1,0 +1,105 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@model Inventory.Models.Products
+
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_Layout";
+}
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Store" asp-controller="Product" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-bg-danger"></div>
+
+            <div class="from-group">
+                <label asp-for="ProductCode" class="control-label">Product Code</label>
+                <input type="text" asp-for="ProductCode" class="form-control" />
+                <span asp-validation-for="ProductCode" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductDescription" class="control-label">Description</label>
+                <input type="text" asp-for="ProductDescription" class="form-control" />
+                <span asp-validation-for="ProductDescription" class="text-bg-danger"></span>
+            </div>
+
+
+            <div class="from-group">
+                <label asp-for="StandardUnitCost" class="control-label">Standard UnitCost</label>
+                <input type="text" asp-for="StandardUnitCost" class="form-control" />
+                <span asp-validation-for="StandardUnitCost" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UnitPrice" class="control-label">Price</label>
+                <input type="text" asp-for="UnitPrice" class="form-control" />
+                <span asp-validation-for="UnitPrice" class="text-bg-danger"></span>
+            </div>
+
+
+            <div class="from-group">
+                <label asp-for="Reorderlevel" class="control-label">Record</label>
+                <input type="text" asp-for="Reorderlevel" class="form-control" />
+                <span asp-validation-for="Reorderlevel" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TargetLevel" class="control-label">Target</label>
+                <input type="text" asp-for="TargetLevel" class="form-control" />
+                <span asp-validation-for="TargetLevel" class="text-bg-danger"></span>
+            </div>
+
+
+            <div class="from-group">
+                <label asp-for="QuantityPerUnit" class="control-label">Quantity</label>
+                <input type="text" asp-for="QuantityPerUnit" class="form-control" />
+                <span asp-validation-for="QuantityPerUnit" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Discountinued" class="control-label">Discount</label>
+                <input type="text" asp-for="Discountinued" class="form-control" />
+                <span asp-validation-for="Discountinued" class="text-bg-danger"></span>
+            </div>
+
+
+            <div class="from-group">
+                <label asp-for="MinimumReorderQuantity" class="control-label">Record Quantity</label>
+                <input type="text" asp-for="MinimumReorderQuantity" class="form-control" />
+                <span asp-validation-for="MinimumReorderQuantity" class="text-bg-danger"></span>
+            </div>
+
+            <div class="form-group">
+               <select asp-for="CategoryId"
+                        asp-items="@ViewBag.Categories"
+                        class="custom-select">
+                        <option> Select ProductCategory></option>
+               </select>
+                <span asp-validation-for="CategoryId" class="text-bg-danger"></span>
+            </div>
+
+
+            <div class="from-group">
+                <label asp-for="AddedBy" class="control-label">AddedBy</label>
+                <input type="text" asp-for="AddedBy" class="form-control" />
+                <span asp-validation-for="AddedBy" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AddedOn" class="control-label">AddedOn</label>
+                <input type="text" asp-for="AddedOn" class="form-control" />
+                <span asp-validation-for="AddedOn" class="text-bg-danger"></span>
+            </div>
+
+
+            <div class="from-group">
+                <label asp-for="ModifiedBy" class="control-label">Modified</label>
+                <input type="text" asp-for="ModifiedBy" class="form-control" />
+                <span asp-validation-for="ModifiedBy" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ModifiedOn" class="control-label">ModifiedOn</label>
+                <input type="text" asp-for="ModifiedOn" class="form-control" />
+                <span asp-validation-for="ModifiedOn" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn btn-secondary">Create Product</button>
+            </div>
+        </form>
+    </div>
+</div>
